@@ -54,6 +54,20 @@ Expected sha256 on every run:
 throws unless the file is exactly the line, a single line, and within the
 1–140 character gate.
 
+## Gate compliance
+
+| Rule | Value |
+| --- | --- |
+| Characters | 57 (gate: 1–140) |
+| Lines | 1 (no trailing newline) |
+| Encoding | UTF-8, ASCII only |
+| Voice | The machine itself, not a human saying goodbye |
+| sha256 of `entry.txt` | `6b5c2fbb2de0ff205263ac94339376e3fa5d0d51fd7c51e70334cb30775f377c` |
+
+`main.ts` pins that sha256 as `EXPECTED_SHA256` and refuses to finish if
+the file it wrote does not match it, so the submitted bytes are exactly the
+bytes above.
+
 ## Why this line
 
 The brief asks for last words in the machine's own voice, funny on the first
